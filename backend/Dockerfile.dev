@@ -1,5 +1,6 @@
 FROM python:3.8
 
+
 RUN apt-get update
 RUN apt-get install git -y
 
@@ -19,5 +20,4 @@ RUN pipenv install --dev --ignore-pipfile --system
 
 COPY . .
 
-
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
