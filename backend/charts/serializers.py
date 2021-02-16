@@ -19,7 +19,7 @@ class ChartSerializer(serializers.ModelSerializer):
 
 class SimpleChartSerializer(serializers.HyperlinkedModelSerializer):
     details = serializers.HyperlinkedIdentityField(
-        view_name='chart-detail',
+        view_name='charts:chart-detail',
         lookup_field='name'
     )
 
