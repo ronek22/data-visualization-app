@@ -1,0 +1,20 @@
+#sidebar {
+  border-right: 1px solid #DEDEDE;
+  font-size: 15px;
+  height:100%;
+
+  .sidebar-item {
+    letter-spacing: 0.45px;
+    padding: 20px 20px;
+    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    font-weight: 700;
+    background-color: #EDEDED;
+    border-right: 4px solid #50B4C8;
+  }
+}

@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <button mat-button>Zadanie rekrutacyjne Angular</button>
+
+    <nav mat-tab-nav-bar fxLayoutAlign="end stretch">
+      <a mat-tab-link *ngFor="let link of links"
+         (click)="onClick(link)"
+         [active]="activeLink == link"> {{link.label}} </a>
+    </nav>
+
+    <button mat-button>Wyloguj</button>
+  </mat-toolbar-row>
+</mat-toolbar>

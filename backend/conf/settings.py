@@ -26,6 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '-mtch9y2u320entmv304x7i1k9f1zq411(jey
 DEBUG = int(os.environ.get('DEBUG', 1))
 
 ALLOWED_HOSTS = []
+USE_X_FORWARDED_HOST = True
 
 # Application definition
 
@@ -37,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'charts.apps.ChartsConfig'
+
 ]
 
 # REST_FRAMEWORK = {
@@ -52,12 +55,15 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'conf.urls'
 

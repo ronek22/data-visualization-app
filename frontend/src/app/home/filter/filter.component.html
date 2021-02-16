@@ -1,0 +1,17 @@
+<form fxLayout="row" fxLayoutAlign="start center" id="filter" [formGroup]="filterForm" (ngSubmit)="onFilter()">
+  <div fxFlex="40%"></div>
+  <div fxFlex="20%" fxLayout="column" fxLayoutAlign="start stretch">
+    <h4>Wybierz kolumny do wizualizacji</h4>
+
+    <mat-form-field appearance="outline">
+      <mat-select formControlName="columns" multiple>
+        <mat-option *ngFor="let col of chartColumns" [value]="col">{{col}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div fxFlex fxLayoutAlign="end" fxLayoutGap="20px">
+    <button class="reset" mat-button (click)="resetFilter()">RESETUJ FILTRY</button>
+    <button fxFlex="30%" class="search" mat-flat-button color="primary">POKAŻ</button>
+  </div>
+</form>

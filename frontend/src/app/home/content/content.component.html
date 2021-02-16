@@ -1,0 +1,4 @@
+<div id="charts" fxLayout="column" fxLayoutGap="100px">
+    <app-charts *ngIf="currentFilter.showCharts" [data]="data" [columns]="columns"></app-charts>
+    <app-table *ngIf="data" [data]="data" [columns]="columns"></app-table>
+</div>

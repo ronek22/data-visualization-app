@@ -23,7 +23,6 @@ class SimpleChartSerializer(serializers.HyperlinkedModelSerializer):
         lookup_field='name'
     )
 
-
     class Meta:
         model = Chart
         fields = ('name', 'details',)

@@ -1,0 +1,12 @@
+<mat-grid-list *ngIf="data" cols="2" rowHeight="2:1" gutterSize="110px">
+  <ng-container *ngFor="let col of chartColumns">
+    <mat-grid-tile>
+      <app-line-chart [data]="data" [col]="col" fxFlexFill></app-line-chart>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-pie-chart [data]="data" [col]="col" fxFlexFill></app-pie-chart>
+    </mat-grid-tile>
+  </ng-container>
+
+</mat-grid-list>

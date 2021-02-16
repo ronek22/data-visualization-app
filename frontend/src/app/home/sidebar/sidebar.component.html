@@ -1,0 +1,7 @@
+  <div id="sidebar">
+    <div class="sidebar-item" *ngFor="let link of links"
+         (click)="onClick(link)"
+         [ngClass]="{'active': activeLink == link}"
+    >{{link.label}}</div>
+
+  </div>
