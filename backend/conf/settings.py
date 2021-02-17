@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '-mtch9y2u320entmv304x7i1k9f1zq411(jey
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', 1))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'backend']
 USE_X_FORWARDED_HOST = True
 
 # Application definition
