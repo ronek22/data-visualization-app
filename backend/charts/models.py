@@ -2,8 +2,7 @@ from django.db import models
 
 
 class Chart(models.Model):
-    # TODO: NAME SHOULD BE UNIQUE
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
 
     def __str__(self):
         return self.name

@@ -18,10 +18,7 @@ export class FilterService {
   sendFilterQuery(value: Filter): void {
     this.filterSubject.next(value);
   }
-
-  resetForm(): void {
-    this.filterSubject.next(this.initValue);
-  }
+  
 
   constructor() {
   }

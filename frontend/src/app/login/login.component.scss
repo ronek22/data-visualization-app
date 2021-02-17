@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  height: 100%;
+  background: #55D8FE;
+}
+
+.login__card {
+  padding: 50px 70px;
+}
+
+.login__title {
+  margin-bottom: 20px;
+}
+
+.submit__button {
+  color: #fff;
+  font-size:15px;
+  font-weight: 700;
+  padding: 0 50px;
+}
+
+
+mat-card {
+  min-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}

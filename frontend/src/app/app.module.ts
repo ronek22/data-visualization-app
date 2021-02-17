@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {HttpClientModule, HttpClientXsrfModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule} from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {NavigationComponent} from './home/navigation/navigation.component';
@@ -24,9 +24,14 @@ import {TableComponent} from './home/content/table/table.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LineChartComponent } from './home/content/charts/line-chart/line-chart.component';
 import { PieChartComponent } from './home/content/charts/pie-chart/pie-chart.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatListModule} from "@angular/material/list";
-import {MatPaginatorModule} from "@angular/material/paginator";
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {JwtInterceptor} from './helpers/jwt.interceptor';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -41,6 +46,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     TableComponent,
     LineChartComponent,
     PieChartComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +67,15 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     ReactiveFormsModule,
     MatListModule,
     MatPaginatorModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule
+
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

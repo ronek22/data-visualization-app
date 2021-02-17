@@ -8,6 +8,6 @@
          [active]="activeLink == link"> {{link.label}} </a>
     </nav>
 
-    <button mat-button>Wyloguj</button>
+    <button mat-button (click)="logout()">Wyloguj</button>
   </mat-toolbar-row>
 </mat-toolbar>

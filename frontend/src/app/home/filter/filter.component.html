@@ -4,7 +4,7 @@
     <h4>Wybierz kolumny do wizualizacji</h4>
 
     <mat-form-field appearance="outline">
-      <mat-select formControlName="columns" multiple>
+      <mat-select placeholder="Wszystkie" formControlName="columns" multiple>
         <mat-option *ngFor="let col of chartColumns" [value]="col">{{col}}</mat-option>
       </mat-select>
     </mat-form-field>
